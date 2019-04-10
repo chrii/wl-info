@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'wl-web-key' => 'Test',
-    'wl-dev-key' => 'Test',
+    'wl-web-key' => 'Test again',
+    'wl-dev-key' => 'Test again',
     /*
     |--------------------------------------------------------------------------
     | Application Name
