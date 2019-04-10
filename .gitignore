@@ -1,4 +1,4 @@
-/config/app.php
+/config/app*
 /node_modules
 /public/hot
 /public/storage
