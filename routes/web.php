@@ -13,3 +13,5 @@
 //SELECT * FROM `wl_steiges` INNER JOIN `wl_haltestellens` ON wl_haltestellens.HALTESTELLEN_ID = wl_steiges.HALSTESTELLEN_ID
 Route::get('/', 'LinesController@home');
 Route::get('/lines', 'LinesController@index');
+
+Route::get('/ajax/details', 'AjaxController@details');
