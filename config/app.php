@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'wl-web-key' => 'Test',
-    'wl-dev-key' => 'Test',
+    'wl-web-key' => env('WL_KEY_WEB', null),
+    'wl-dev-key' => env('WL_KEY_DEV', null),
     /*
     |--------------------------------------------------------------------------
     | Application Name

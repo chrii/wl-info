@@ -11,9 +11,5 @@
 |
 */
 //SELECT * FROM `wl_steiges` INNER JOIN `wl_haltestellens` ON wl_haltestellens.HALTESTELLEN_ID = wl_steiges.HALSTESTELLEN_ID
-Route::get('/', function () {
-    $hs = App\Wl_steige::all()->first();
-    $hs = $hs->getByStation('ptMetro')->where('RICHTUNG', 'H')->groupBy('BEZEICHNUNG');
-    //dump($hs = $hs->getByStation('ptMetro')->groupBy('BEZEICHNUNG'))
-    return view('welcome', ['stellen' => collect($hs)]);
-});
+Route::get('/', 'LinesController@home');
+Route::get('/lines', 'LinesController@index');
