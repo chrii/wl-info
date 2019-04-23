@@ -52,7 +52,6 @@
         </div>
     </div>
 </div>
-
 @endsection
 
 @section('optional-javascript')

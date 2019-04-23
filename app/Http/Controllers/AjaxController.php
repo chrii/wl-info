@@ -28,6 +28,11 @@ class AjaxController extends Controller
                         $fetch = $fetch[$fetchKey];
                     }   
                 }
+                /**
+                 * @FIXME
+                 * lines does not work
+                 * Linie O GET 500 Internal
+                 */
                 if($fetch->lines[0]->type === 'ptTramVRT'){
                     continue;
                 }

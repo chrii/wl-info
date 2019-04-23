@@ -3,14 +3,14 @@
 @section('content')
 
 <div class="card">
-    <div class="card-body">
+{{--     <div class="card-body">
         <div class="card-header">
             <h1>
                 Verspätungen
             </h1>
         </div>
         @if(count($lang) === 0)
-        <p>Derzeit sind keine Verspätungen gemeldet</p>
+            <p>Derzeit sind keine Verspätungen gemeldet</p>
         @else
         <table class="table table-striped">
             <thead>
@@ -23,7 +23,7 @@
                 @foreach($lang AS $shortDetails)
                 <tr>
                     <td>Linie {{ $shortDetails['info']['title'] }}</td>
-                    <td>{{ date('i', strtotime( $shortDetails['info']['time']->resume )) }} Minuten</td>
+                     <td>{{ empty($shortDetails['info']['time']->resume) ? 'Keine Angabe' : date('i', strtotime( $shortDetails['info']['time']->resume )) . ' Minuten' }} </td>
                 </tr>
 
                 @endforeach
@@ -49,8 +49,9 @@
                     </thead>
                     <tbody>
                         @foreach($kurz AS $shortDetails)
+                        {{ dd($shortDetails['station']->first()) }}
                         <tr>
-                            <td>{{ $shortDetails['station']->first()->NAME }}</td>
+                            <td>{{ isset($shortDetails['station']->first()->NAME) ? $shortDetails['station']->first()->NAME : 'NIX'}}</td>
                             <td> 
                                 @foreach($shortDetails['station'] AS $lineNameShort)
                                     {{ $lineNameShort->BEZEICHNUNG }}
@@ -87,7 +88,6 @@
                             <td>{{ $shortDetails['info']['title'] }}</td>
                             <td>{{ $shortDetails['info']['attributes']->location }}</td>
                             <td>{{ $shortDetails['info']['attributes']->reason }}</td>
-{{--                             <td>{{ date('i', strtotime( $shortDetails['info']['time']->resume )) }} Minuten</td> --}}
                         </tr>
 
                         @endforeach
@@ -95,6 +95,6 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 @endsection
